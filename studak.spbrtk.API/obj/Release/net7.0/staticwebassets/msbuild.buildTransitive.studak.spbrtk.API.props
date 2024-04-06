@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\studak.spbrtk.API.props" />
+</Project>
