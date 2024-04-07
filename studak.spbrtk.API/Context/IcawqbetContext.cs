@@ -16,6 +16,8 @@ public partial class IcawqbetContext : DbContext
     {
     }
 
+    public virtual DbSet<Admin> Admins { get; set; }
+
     public virtual DbSet<Direction> Directions { get; set; }
 
     public virtual DbSet<Event> Events { get; set; }
@@ -56,6 +58,27 @@ public partial class IcawqbetContext : DbContext
             .HasPostgresExtension("unaccent")
             .HasPostgresExtension("uuid-ossp")
             .HasPostgresExtension("xml2");
+
+        modelBuilder.Entity<Admin>(entity =>
+        {
+            entity.HasKey(e => e.Userid).HasName("admin_pkey");
+
+            entity.ToTable("admin");
+
+            entity.Property(e => e.Userid)
+                .ValueGeneratedNever()
+                .HasColumnName("userid");
+            entity.Property(e => e.Userlogin)
+                .HasMaxLength(128)
+                .HasColumnName("userlogin");
+            entity.Property(e => e.Userpasswordhash).HasColumnName("userpasswordhash");
+            entity.Property(e => e.Userpasswordsalt).HasColumnName("userpasswordsalt");
+
+            entity.HasOne(d => d.User).WithOne(p => p.Admin)
+                .HasForeignKey<Admin>(d => d.Userid)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("admin_userid_fkey");
+        });
 
         modelBuilder.Entity<Direction>(entity =>
         {

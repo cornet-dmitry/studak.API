@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace studak.spbrtk.API.Models;
 
-public class User
+public partial class User
 {
     public int Id { get; set; }
 
@@ -33,9 +33,11 @@ public class User
 
     public DateTime? StartDate { get; set; }
 
-    public virtual ICollection<Event> Events { get; set; } = new List<Event>();
+    public virtual Admin? Admin { get; set; }
 
-    public virtual ICollection<Involvement> Involvements { get; set; } = new List<Involvement>();
+    public virtual ICollection<Event> Events { get; } = new List<Event>();
+
+    public virtual ICollection<Involvement> Involvements { get; } = new List<Involvement>();
 
     public virtual UserStatus? StatusNavigation { get; set; }
 }

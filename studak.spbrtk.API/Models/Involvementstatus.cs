@@ -9,5 +9,5 @@ public partial class Involvementstatus
 
     public string? InvolvementName { get; set; }
 
-    public virtual ICollection<Involvement> Involvements { get; set; } = new List<Involvement>();
+    public virtual ICollection<Involvement> Involvements { get; } = new List<Involvement>();
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/k1pN+hRLdvUledFVL5UR93f/rvwxSG7/lXNm/HNKPvfURhzxd/GbKeqH6X6WUxXkDEd61+PT8ggEvXeKyvaTA==",
+  "dgSpecHash": "P9mp74KaC7UEeRjHcduRXh+HJyfu1N0PFfIhM3pQFb5w7vWJhSuk0IlleiZjGMOdFxBsz5NiRNCuokg0rLHbhg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий Хорунжий\\RiderProjects\\studak.spbrtk.API\\studak.spbrtk.API\\studak.spbrtk.API.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,10 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
@@ -35,6 +39,7 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
   ],

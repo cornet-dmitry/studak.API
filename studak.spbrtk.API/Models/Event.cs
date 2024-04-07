@@ -27,7 +27,7 @@ public partial class Event
 
     public virtual Direction? DirectionNavigation { get; set; }
 
-    public virtual ICollection<Involvement> Involvements { get; set; } = new List<Involvement>();
+    public virtual ICollection<Involvement> Involvements { get; } = new List<Involvement>();
 
     public virtual User? ResponsibleNavigation { get; set; }
 }

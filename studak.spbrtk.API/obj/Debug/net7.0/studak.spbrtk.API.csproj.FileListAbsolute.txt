@@ -43,3 +43,8 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.pdb
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.genruntimeconfig.cache
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\ref\studak.spbrtk.API.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
