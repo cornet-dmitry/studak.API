@@ -1,13 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
+
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;

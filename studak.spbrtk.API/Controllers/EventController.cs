@@ -1,12 +1,15 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;
 
-namespace studak.spbrtk.API.Controllers;
-
-[Route("api/[controller]")]
+namespace studak.spbrtk.API.Controllers
+{
+    [Route("api/[controller]")]
 [ApiController]
 
 public class EventController : Controller
@@ -25,15 +28,18 @@ public class EventController : Controller
         var events = await _context.Events
             .Select(x => new EventDTO()
             {
+                Id = x.Id,
                 Responsible = x.ResponsibleNavigation.Surname + " " + x.ResponsibleNavigation.Name,
                 Direction = x.DirectionNavigation.DirectionLongName,
                 Name = x.Name,
                 Description = x.Description,
+                Place = x.Place,
                 StartDate = x.StartDate,
                 EndDate = x.EndDate,
                 StartTime = x.StartTime,
                 EndTime = x.EndTime,
-                Rate = x.Rate
+                Rate = x.Rate,
+                Isactice = x.Isactice
             })
             .OrderBy(x => x.StartDate)
             .OrderBy(x => x.StartTime)
@@ -44,28 +50,32 @@ public class EventController : Controller
     
     [HttpPost("AddEvent")]
     public async Task<ActionResult<EventDTO>> AddEvent(
-        [FromForm] int responsible,
-        [FromForm] int direction,
+        [FromForm] string responsible,
+        [FromForm] string direction,
         [FromForm] string name,
         [FromForm] string description,
-        [FromForm] DateTime startDate,
-        [FromForm] DateTime endDate,
-        [FromForm] DateTime startTime,
-        [FromForm] DateTime endTime,
-        [FromForm] int rate
+        [FromForm] string place,
+        [FromForm] string startDate,
+        [FromForm] string endDate,
+        [FromForm] string startTime,
+        [FromForm] string endTime,
+        [FromForm] string rate,
+        [FromForm] bool isActive
         )
     {
         var newEvent = new Event
         {
-            Responsible = responsible,
-            Direction = direction,
+            Responsible = Convert.ToInt32(responsible),
+            Direction = Convert.ToInt32(direction),
             Name = name,
             Description = description,
-            StartDate = startDate,
-            EndDate = endDate,
-            StartTime = startTime,
-            EndTime = endTime,
-            Rate = rate
+            Place = place,
+            StartDate = DateTime.Parse(startDate),
+            EndDate = DateTime.Parse(endDate),
+            StartTime = DateTime.Parse(startTime),
+            EndTime = DateTime.Parse(endTime),
+            Rate = Convert.ToInt32(rate),
+            Isactice = Convert.ToBoolean(isActive)
             // Добавьте другие поля, если необходимо
         };
 
@@ -78,15 +88,15 @@ public class EventController : Controller
     
     [HttpPost("EditEvent/{id}")]
     public async Task<ActionResult<EventDTO>> EditEvent(int id,
-        [FromForm] int responsible,
-        [FromForm] int direction,
         [FromForm] string name,
         [FromForm] string description,
+        [FromForm] string place,
         [FromForm] DateTime startDate,
         [FromForm] DateTime endDate,
         [FromForm] DateTime startTime,
         [FromForm] DateTime endTime,
-        [FromForm] int rate
+        [FromForm] string rate,
+        [FromForm] string isActive
     )
     {
         try
@@ -97,15 +107,17 @@ public class EventController : Controller
                 return NotFound();
             }
 
-            events.Responsible = responsible;
-            events.Direction = direction;
+            events.Responsible = events.Responsible;
+            events.Direction = events.Direction;
             events.Name = name;
             events.Description = description;
+            events.Place = place;
             events.StartDate = startDate;
             events.EndDate = endDate;
             events.StartTime = startTime;
             events.EndTime = endTime;
-            events.Rate = rate;
+            events.Rate = Convert.ToInt32(rate);
+            events.Isactice = Convert.ToBoolean(isActive);
             
             _context.Events.Update(events);
             await _context.SaveChangesAsync();
@@ -141,3 +153,5 @@ public class EventController : Controller
         }
     }
 }
+}
+

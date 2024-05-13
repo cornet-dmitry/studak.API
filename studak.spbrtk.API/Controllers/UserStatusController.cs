@@ -1,12 +1,15 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;
 
-namespace studak.spbrtk.API.Controllers;
-
-[Route("api/[controller]")]
+namespace studak.spbrtk.API.Controllers
+{
+    [Route("api/[controller]")]
 [ApiController]
 
 public class UserStatusController : Controller
@@ -29,6 +32,21 @@ public class UserStatusController : Controller
                 StatusName = x.StatusName
             })
             .OrderBy(x => x.Id)
+            .ToListAsync();
+
+        return Ok(events);
+    }
+    
+    [HttpPost("GetUserStatusByID")]
+    public async Task<ActionResult> GetUserStatusByID([FromForm] string statusId)
+    {
+        var events = await _context.UserStatuses
+            .Where(x => x.Id == Convert.ToInt32(statusId))
+            .Select(x => new UserStatusDTO()
+            {
+                Id = x.Id,
+                StatusName = x.StatusName
+            })
             .ToListAsync();
 
         return Ok(events);
@@ -101,3 +119,5 @@ public class UserStatusController : Controller
     }
 
 }
+}
+

@@ -1,43 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace studak.spbrtk.API.Models;
-
-public partial class User
+namespace studak.spbrtk.API.Models
 {
-    public int Id { get; set; }
+    
+    public partial class User
+    {
+        public int Id { get; set; }
 
-    public string? Surname { get; set; }
+        public string? Surname { get; set; }
 
-    public string? Name { get; set; }
+        public string? Name { get; set; }
 
-    public string? Patronymic { get; set; }
+        public string? Patronymic { get; set; }
 
-    public string? Group { get; set; }
+        public string? Group { get; set; }
 
-    public DateTime? DateBirth { get; set; }
+        public DateTime? DateBirth { get; set; }
 
-    public string? Phone { get; set; }
+        public string? Phone { get; set; }
 
-    public string? Email { get; set; }
+        public string? Email { get; set; }
 
-    public string? VkLink { get; set; }
+        public string? VkLink { get; set; }
 
-    public string? TgLink { get; set; }
+        public string? TgLink { get; set; }
 
-    public int? Kpi { get; set; }
+        public int? Kpi { get; set; }
 
-    public int? Status { get; set; }
+        public int? Status { get; set; }
 
-    public string? OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
-    public DateTime? StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
-    public virtual Admin? Admin { get; set; }
+        public virtual Admin? Admin { get; set; }
 
-    public virtual ICollection<Event> Events { get; } = new List<Event>();
+        public virtual ICollection<Event> Events { get; } = new List<Event>();
 
-    public virtual ICollection<Involvement> Involvements { get; } = new List<Involvement>();
+        public virtual ICollection<Involvement> Involvements { get; } = new List<Involvement>();
 
-    public virtual UserStatus? StatusNavigation { get; set; }
+        public virtual UserStatus? StatusNavigation { get; set; }
+    }
+
 }

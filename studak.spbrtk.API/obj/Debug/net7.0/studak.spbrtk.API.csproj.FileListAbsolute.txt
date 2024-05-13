@@ -37,7 +37,6 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\scopedcss\bundle\studak.spbrtk.API.styles.css
-C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.csproj.CopyComplete
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\refint\studak.spbrtk.API.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.pdb
@@ -48,3 +47,5 @@ C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.spbrtk.API.sourcelink.json
+C:\Users\Дмитрий Хорунжий\RiderProjects\studak.spbrtk.API\studak.spbrtk.API\obj\Debug\net7.0\studak.s.6B40F1C2.Up2Date

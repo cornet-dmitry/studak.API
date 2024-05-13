@@ -1,84 +1,89 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;
 
-namespace studak.spbrtk.API.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-
-public class KPIController : Controller
+namespace studak.spbrtk.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     
-    private readonly IcawqbetContext _context;
-
-    public KPIController(IcawqbetContext context)
+    public class KPIController : Controller
     {
-        _context = context;
-    }
-
-    [HttpGet("GetUsersKPI")]
-    public async Task<ActionResult> GetUsersKPI()
-    {
-        var active = await _context.Users
-            .Select(x => new User()
-            {
-                Id = x.Id,
-                Kpi = x.Kpi
-            })
-            .ToListAsync();
         
-        if (active.Count > 0)
-        {
-            return Ok(active);
-        }
-        return BadRequest();
-    }
+        private readonly IcawqbetContext _context;
     
-    [HttpPost("ChangeUserKPI/{userId}")]
-    public async Task<ActionResult> ChangeUserKPI(int userId, int changeAmount)
-    {
-        var user = await _context.Users.FindAsync(userId);
-
-        if (user == null)
+        public KPIController(IcawqbetContext context)
         {
-            return NotFound($"Пользователь с ID {userId} не найден");
+            _context = context;
         }
-
-        user.Kpi += changeAmount;
-
-        _context.Users.Update(user);
-        await _context.SaveChangesAsync(); 
-
-        return Ok(user);
-    }
     
-    [HttpGet("GetUserWithHighestKPI")]
-    public async Task<ActionResult<User>> GetUserWithHighestKPI()
-    {
-        var userWithHighestKPI = await _context.Users.OrderByDescending(u => u.Kpi).FirstOrDefaultAsync();
-
-        if (userWithHighestKPI == null)
+        [HttpGet("GetUsersKPI")]
+        public async Task<ActionResult> GetUsersKPI()
         {
-            return NotFound("Пользователи не найдены");
+            var active = await _context.Users
+                .Select(x => new User()
+                {
+                    Id = x.Id,
+                    Kpi = x.Kpi
+                })
+                .ToListAsync();
+            
+            if (active.Count > 0)
+            {
+                return Ok(active);
+            }
+            return BadRequest();
         }
-
-        return Ok(userWithHighestKPI);
-    }
-
-    [HttpGet("GetTopUsersWithHighestKPI")]
-    public async Task<ActionResult<List<User>>> GetTopUsersWithHighestKPI()
-    {
-        var topUsersWithHighestKPI = await _context.Users.OrderByDescending(u => u.Kpi).Take(10).ToListAsync();
-
-        if (topUsersWithHighestKPI == null || !topUsersWithHighestKPI.Any())
+        
+        [HttpPost("ChangeUserKPI/{userId}")]
+        public async Task<ActionResult> ChangeUserKPI(int userId, int changeAmount)
         {
-            return NotFound("Пользователи не найдены");
+            var user = await _context.Users.FindAsync(userId);
+    
+            if (user == null)
+            {
+                return NotFound($"Пользователь с ID {userId} не найден");
+            }
+    
+            user.Kpi += changeAmount;
+    
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync(); 
+    
+            return Ok(user);
         }
-
-        return Ok(topUsersWithHighestKPI);
+        
+        [HttpGet("GetUserWithHighestKPI")]
+        public async Task<ActionResult<User>> GetUserWithHighestKPI()
+        {
+            var userWithHighestKPI = await _context.Users.OrderByDescending(u => u.Kpi).FirstOrDefaultAsync();
+    
+            if (userWithHighestKPI == null)
+            {
+                return NotFound("Пользователи не найдены");
+            }
+    
+            return Ok(userWithHighestKPI);
+        }
+    
+        [HttpGet("GetTopUsersWithHighestKPI")]
+        public async Task<ActionResult<List<User>>> GetTopUsersWithHighestKPI()
+        {
+            var topUsersWithHighestKPI = await _context.Users.OrderByDescending(u => u.Kpi).Take(10).ToListAsync();
+    
+            if (topUsersWithHighestKPI == null || !topUsersWithHighestKPI.Any())
+            {
+                return NotFound("Пользователи не найдены");
+            }
+    
+            return Ok(topUsersWithHighestKPI);
+        }
+    
     }
-
 }
+

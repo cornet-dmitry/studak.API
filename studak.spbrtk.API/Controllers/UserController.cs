@@ -1,11 +1,15 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;
 
-namespace studak.spbrtk.API.Controllers;
-
+namespace studak.spbrtk.API.Controllers
+{
+    
 [Route("api/[controller]")]
 [ApiController]
 
@@ -59,6 +63,7 @@ public class UserController : Controller
             .Where(x => x.Status != 1)
             .Select(x => new UserDTO()
             {
+                Id = x.Id,
                 Surname = x.Surname,
                 Name = x.Name,
                 Patronymic = x.Patronymic,
@@ -69,7 +74,7 @@ public class UserController : Controller
                 VkLink = x.VkLink,
                 TgLink = x.TgLink,
                 Kpi = x.Kpi,
-                Status = x.StatusNavigation == null ? null : x.StatusNavigation.StatusName,
+                Status = x.Status,
                 OrderNumber = x.OrderNumber,
                 StartDate = x.StartDate
             })
@@ -218,4 +223,5 @@ public class UserController : Controller
             return BadRequest(new { message = e.Message });
         }
     }
+}
 }

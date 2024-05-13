@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P9mp74KaC7UEeRjHcduRXh+HJyfu1N0PFfIhM3pQFb5w7vWJhSuk0IlleiZjGMOdFxBsz5NiRNCuokg0rLHbhg==",
+  "dgSpecHash": "3kuUo1585mImeDOc6emCd0J+3FkedPKlxmQy9XRz74jYj7W0G7ESDgdWpTwbI8wq7XfY5j8dydGqt+6NLbDq5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Дмитрий Хорунжий\\RiderProjects\\studak.spbrtk.API\\studak.spbrtk.API\\studak.spbrtk.API.csproj",
   "expectedPackageFiles": [
@@ -41,7 +41,11 @@
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Дмитрий Хорунжий\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,11 +1,15 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using studak.spbrtk.API.Context;
 using studak.spbrtk.API.DTO;
 using studak.spbrtk.API.Models;
 
-namespace studak.spbrtk.API.Controllers;
-
+namespace studak.spbrtk.API.Controllers
+{
+    
 [Route("api/[controller]")]
 [ApiController]
 
@@ -20,10 +24,10 @@ public class InvolvementController : Controller
     }
 
     [HttpPost("GetInvolvementByEventId")]
-    public async Task<ActionResult> GetInvolvementByEventId([FromForm] int id)
+    public async Task<ActionResult> GetInvolvementByEventId([FromForm] string id)
     {
         var events = await _context.Involvements
-            .Where(x => x.Eventid == id)
+            .Where(x => x.Eventid == Convert.ToInt32(id))
             .Select(x => new Involvement()
             {
                 Eventid = x.Eventid,
@@ -124,4 +128,5 @@ public class InvolvementController : Controller
             return BadRequest(e);
         }
     }
+}
 }
