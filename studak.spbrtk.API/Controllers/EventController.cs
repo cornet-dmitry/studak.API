@@ -131,11 +131,11 @@ public class EventController : Controller
     }
 
     [HttpDelete("DeleteEvent/{id}")]
-    public async Task<ActionResult> DeleteEvent(int id)
+    public async Task<ActionResult> DeleteEvent(string id)
     {
         try
         {
-            var events = await _context.Events.FindAsync(id);
+            var events = await _context.Events.FindAsync(Convert.ToInt32(id));
  
             if (events == null)
             {
