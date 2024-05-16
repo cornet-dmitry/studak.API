@@ -142,6 +142,13 @@ public class EventController : Controller
                 return NotFound();
             }
 
+            var invoList = await _context.Involvements.Where(x => x.Eventid == events.Id).ToListAsync();
+
+            foreach (var VARIABLE in invoList)
+            {
+                _context.Remove(VARIABLE);
+            }
+            
             _context.Events.Remove(events);
             await _context.SaveChangesAsync();
 

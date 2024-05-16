@@ -58,15 +58,15 @@ public class InvolvementController : Controller
 
     [HttpPost("AddInvolvement")]
     public async Task<ActionResult> AddInvolvement(
-        [FromForm] int eventID,
-        [FromForm] int userID
+        [FromForm] string eventID,
+        [FromForm] string userID
         )
     {
         try
         {
             var check = await _context.Involvements
-                .Where(x => x.Eventid == eventID)
-                .Where(x => x.Userid == userID).ToListAsync();
+                .Where(x => x.Eventid == Convert.ToInt32(eventID))
+                .Where(x => x.Userid == Convert.ToInt32(userID)).ToListAsync();
 
             if (check.Count > 0)
             {
@@ -75,8 +75,8 @@ public class InvolvementController : Controller
             
             Involvement involvement = new Involvement()
             {
-                Eventid = eventID,
-                Userid = userID,
+                Eventid = Convert.ToInt32(eventID),
+                Userid = Convert.ToInt32(userID),
                 Status = 1,
                 Createtime = DateTime.Now
             };

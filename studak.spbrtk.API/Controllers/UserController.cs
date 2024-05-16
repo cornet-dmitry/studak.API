@@ -107,15 +107,15 @@ public class UserController : Controller
         [FromForm] string name,
         [FromForm] string patronymic,
         [FromForm] string group,
-        [FromForm] DateTime dateBirth,
+        [FromForm] string dateBirth,
         [FromForm] string phone,
         [FromForm] string email,
         [FromForm] string vkLink,
         [FromForm] string tgLink,
-        [FromForm] int kpi,
-        [FromForm] int status,
+        [FromForm] string kpi,
+        [FromForm] string status,
         [FromForm] string orderNumber,
-        [FromForm] DateTime startDate
+        [FromForm] string startDate
         )
     {
         try
@@ -126,15 +126,15 @@ public class UserController : Controller
             user.Name = name;
             user.Patronymic = patronymic;
             user.Group = group;
-            user.DateBirth = dateBirth;
+            user.DateBirth = DateTime.Parse(dateBirth);
             user.Phone = phone;
             user.Email = email;
             user.VkLink = vkLink;
             user.TgLink = tgLink;
-            user.Kpi = kpi;
-            user.Status = status;
+            user.Kpi = Convert.ToInt32(kpi);
+            user.Status = Convert.ToInt32(status);
             user.OrderNumber = orderNumber;
-            user.StartDate = startDate;
+            user.StartDate = DateTime.Parse(startDate);
         
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
