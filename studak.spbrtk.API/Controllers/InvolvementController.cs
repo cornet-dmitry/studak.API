@@ -128,5 +128,30 @@ public class InvolvementController : Controller
             return BadRequest(e);
         }
     }
+    
+    [HttpDelete("DeleteInvolvement/{eventid}&{userid}")]
+    public async Task<ActionResult> DeleteInvolvement(string eventid, string userid)
+    {
+        try
+        {
+            var involvements = await _context.Involvements
+                .Where(x => x.Eventid == Convert.ToInt32(eventid))
+                .Where(x => x.Userid == Convert.ToInt32(userid)).FirstOrDefaultAsync();
+ 
+            if (involvements == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Involvements.Remove(involvements);
+            await _context.SaveChangesAsync();
+
+            return Ok(involvements);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new { message = e.Message });
+        }
+    }
 }
 }

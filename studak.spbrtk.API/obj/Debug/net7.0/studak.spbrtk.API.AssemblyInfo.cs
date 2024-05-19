@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("studak.spbrtk.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01ea685ed1f67075dc65ba74d7becae8003f254a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b55d4e408c315ce4e5c7e797b39ba658c87ee7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("studak.spbrtk.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("studak.spbrtk.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
