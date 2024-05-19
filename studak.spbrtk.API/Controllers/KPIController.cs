@@ -40,17 +40,19 @@ namespace studak.spbrtk.API.Controllers
             return BadRequest();
         }
         
-        [HttpPost("ChangeUserKPI/{userId}")]
-        public async Task<ActionResult> ChangeUserKPI(int userId, int changeAmount)
+        [HttpPost("ChangeUserKPI")]
+        public async Task<ActionResult> ChangeUserKPI(
+            [FromForm] string userId,
+            [FromForm] string changeAmount)
         {
-            var user = await _context.Users.FindAsync(userId);
+            var user = await _context.Users.FindAsync(Convert.ToInt32(userId));
     
             if (user == null)
             {
                 return NotFound($"Пользователь с ID {userId} не найден");
             }
     
-            user.Kpi += changeAmount;
+            user.Kpi += Convert.ToInt32(changeAmount);
     
             _context.Users.Update(user);
             await _context.SaveChangesAsync(); 
