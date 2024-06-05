@@ -42,7 +42,6 @@ public class UserController : Controller
                 TgLink = x.TgLink,
                 Kpi = x.Kpi,
                 Status = x.Status,
-                //Status = x.StatusNavigation == null ? null : x.StatusNavigation.StatusName,
                 OrderNumber = x.OrderNumber,
                 StartDate = x.StartDate
             })
@@ -148,27 +147,26 @@ public class UserController : Controller
 
     }
     
-    
     [HttpPost("EditUser/{id}")]
-    public async Task<ActionResult> EditUser(int id,
+    public async Task<ActionResult> EditUser(string id,
         [FromForm] string surname,
         [FromForm] string name,
         [FromForm] string patronymic,
         [FromForm] string group,
-        [FromForm] DateTime dateBirth,
+        [FromForm] string dateBirth,
         [FromForm] string phone,
         [FromForm] string email,
         [FromForm] string vkLink,
         [FromForm] string tgLink,
-        [FromForm] int kpi,
-        [FromForm] int status,
+        [FromForm] string kpi,
+        [FromForm] string status,
         [FromForm] string orderNumber,
-        [FromForm] DateTime startDate
+        [FromForm] string startDate
     )
     {
         try
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.FindAsync(Convert.ToInt32(id));
 
             if (user == null)
             {
@@ -179,15 +177,15 @@ public class UserController : Controller
             user.Name = name;
             user.Patronymic = patronymic;
             user.Group = group;
-            user.DateBirth = dateBirth;
+            user.DateBirth = DateTime.Parse(dateBirth);
             user.Phone = phone;
             user.Email = email;
             user.VkLink = vkLink;
             user.TgLink = tgLink;
-            user.Kpi = kpi;
-            user.Status = status;
+            user.Kpi = Convert.ToInt32(kpi);
+            user.Status = Convert.ToInt32(status);
             user.OrderNumber = orderNumber;
-            user.StartDate = startDate;
+            user.StartDate = DateTime.Parse(startDate);
             
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
